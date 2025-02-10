@@ -8,8 +8,8 @@ Husk, at du ikke må arbejde på din opgave mellem kl. 16:00 og kl. 8:00.
 
 ## Dag 1
 
-Morgen - (tidspunkt)  
-Eftermiddag - (tidspunkt)
+Morgen - 08:39 (Fået sat filstrukturen op) 
+Eftermiddag - 15:10 (Lavet Landingpage)
 
 ## Dag 2
 

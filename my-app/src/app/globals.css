@@ -5,6 +5,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --bg: #5E2E53;
+  --fg: #E1A1E9;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,4 +21,8 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.racing-sans {
+  font-family: "Racing Sans One", sans-serif;
 }
