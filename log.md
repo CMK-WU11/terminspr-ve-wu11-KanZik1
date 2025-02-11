@@ -13,7 +13,7 @@ Eftermiddag - 15:10 (Lavet Landingpage)
 
 ## Dag 2
 
-Morgen - (tidspunkt)  
+Morgen - 8:03 (tidspunkt)  
 Eftermiddag - (tidspunkt)
 
 ## Dag 3
