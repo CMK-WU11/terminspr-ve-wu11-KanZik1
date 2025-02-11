@@ -18,10 +18,12 @@ export default function Home() {
       style={{ backgroundImage: "url('/splash-image.jpg')" }}
     >
       <h1 className="racing-sans text-5xl font-bold text-white mb-10 tracking-widest">
-        LANDRUP <br />
+        LANDRUP
+        <br />
         DANS
       </h1>
       {showButton && (
+
         <button
           className="absolute bottom-10 px-6 py-3 bg-[#5E2E53] text-white rounded-lg transition-opacity duration-500"
           onClick={() => router.push("/aktiviteter")}
