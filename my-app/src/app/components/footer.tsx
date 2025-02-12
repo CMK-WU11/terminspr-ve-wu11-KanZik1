@@ -1,20 +1,38 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer() {
     const pathname = usePathname();
+    const router = useRouter();
 
     if (pathname === "/" || pathname === "/login") {
         return null;
     }
 
+    const handleCalendarClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+
+        const userToken = document.cookie
+            .split('; ')
+            .find(row => row.startsWith('userToken='));
+
+        if (userToken) {
+
+            router.push('/kalender');
+        } else {
+
+            router.push('/login');
+        }
+    };
+
     return (
         <footer className="fixed bottom-0 w-full bg-white border-t border-gray-200">
-            <nav className="max-w-screen-x1 mx-auto px-4">
+            <nav className="max-w-screen-xl mx-auto px-4">
                 <div className="flex justify-around items-center h-16">
+
                     <Link href="/aktiviteter"
                         className={`flex flex-col items-center ${pathname === "/aktiviteter" ? "text-pink-500" : "text-gray-500"
                             }`}>
@@ -27,9 +45,9 @@ export default function Footer() {
                         <span className="text-xs mt-1">Aktiviteter</span>
                     </Link>
 
-                    <Link href="/search"
-                        className={`flex flex-col items-center ${pathname === "/search" ? "text-pink-500" : "text-gray-500"
-                            }`}>
+                    <button
+                        data-search-icon
+                        className="flex flex-col items-center text-gray-500">
                         <Image
                             src="/search.png"
                             alt="Søg"
@@ -37,11 +55,11 @@ export default function Footer() {
                             height={24}
                         />
                         <span className="text-xs mt-1">Søg</span>
-                    </Link>
+                    </button>
 
-                    <Link href="/kalender"
-                        className={`flex flex-col items-center ${pathname === "/kalender" ? "text-pink-500" : "text-gray-500"
-                            }`}>
+                    <button
+                        onClick={handleCalendarClick}
+                        className={`flex flex-col items-center ${pathname === "/kalender" ? "text-pink-500" : "text-gray-500"}`}>
                         <Image
                             src="/kalender.png"
                             alt="Kalender"
@@ -49,9 +67,10 @@ export default function Footer() {
                             height={24}
                         />
                         <span className="text-xs mt-1">Kalender</span>
-                    </Link>
+                    </button>
+
                 </div>
             </nav>
         </footer>
-    )
+    );
 }

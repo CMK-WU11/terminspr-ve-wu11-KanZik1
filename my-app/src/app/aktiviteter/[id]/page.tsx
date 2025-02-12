@@ -1,7 +1,13 @@
+type Props = {
+    params: {
+        id: string
+    }
+}
+
 async function getAktivitet(id: string) {
     try {
         const res = await fetch(`http://localhost:4000/api/v1/activities/${id}`, {
-            cache: 'no-store'
+            next: { revalidate: 0 },
         });
 
         if (!res.ok) {
@@ -15,13 +21,16 @@ async function getAktivitet(id: string) {
     }
 }
 
-export default async function AktivitetDetaljer({ params }: { params: { id: string } }) {
+export default async function AktivitetDetaljer({ params }: Props) {
     const aktivitet = await getAktivitet(params.id);
 
     if (!aktivitet) {
-        return <div>Aktivitet ikke fundet</div>;
+        return (
+            <div className="min-h-screen bg-[#5E2E53] text-white p-6">
+                Aktivitet ikke fundet
+            </div>
+        );
     }
-
 
     return (
         <div className="min-h-screen bg-[#5E2E53]">

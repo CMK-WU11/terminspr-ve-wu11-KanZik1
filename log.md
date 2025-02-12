@@ -19,7 +19,7 @@ Eftermiddag - 14:32 (Skal hjælpe far, så måtte slutte lidt før idag.)
 ## Dag 3
 
 Morgen - 8:00 
-Eftermiddag - (tidspunkt)
+Eftermiddag - 15:41
 
 ## Dag 4
 
