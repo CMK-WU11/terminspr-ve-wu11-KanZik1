@@ -24,7 +24,7 @@ Eftermiddag - 15:41
 ## Dag 4
 
 Morgen - 8:00  
-Eftermiddag - (tidspunkt)
+Eftermiddag - 14:53 (skal ringe til banken kl 15)
 
 ## Dag 5
 

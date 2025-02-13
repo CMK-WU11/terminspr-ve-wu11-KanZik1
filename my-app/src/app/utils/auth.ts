@@ -1,28 +1,17 @@
 export const checkAuth = async () => {
-    const token = getCookie('usertoken');
-
+    const token = getCookie('landrupToken');
     if (!token) return null;
 
-    try {
-        const res = await fetch('http://localhost:4000/api/v1/auth/validate', {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
+    const res = await fetch('http://localhost:4000/api/v1/auth/validate', {
+        headers: { 'Authorization': `Bearer ${token}` }
+    });
 
-        });
-
-        if (!res.ok) {
-            deleteCookie('userToken');
-            return null;
-
-        }
-
-        return token;
-    } catch (error) {
-        deleteCookie('userToken');
+    if (!res.ok) {
+        deleteCookie('landrupToken');
         return null;
     }
 
+    return token;
 };
 
 export const getCookie = (name: string) => {
@@ -39,8 +28,7 @@ export const deleteCookie = (name: string) => {
 export const setCookie = (name: string, value: string, remember: boolean = false) => {
     if (remember) {
         document.cookie = `${name}=${value}; max-age=2592000; path=/`;
-
     } else {
         document.cookie = `${name}=${value}; path=/`;
     }
-}
+};

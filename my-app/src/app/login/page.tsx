@@ -24,8 +24,15 @@ export default function Login() {
         }
 
         const data = await res.json();
-        const cookieOptions = rememberMe ? 'max-age=2592000' : '';
-        document.cookie = `userToken=${data.token}; ${cookieOptions}; path=/`;
+        const validUntil = data.validUntil;
+
+        const cookieOptions = rememberMe ? 'expires=' + validUntil : '';
+
+
+        console.log({ mikkel: data })
+        document.cookie = `landrupToken=${data.token}; ${cookieOptions}; path=/`;
+        document.cookie = `landrupUserId=${data.userId}; ${cookieOptions}; path=/`;
+        document.cookie = `landrupRole=${data.role}; ${cookieOptions}; path=/`;
 
         router.push('/kalender');
     };
