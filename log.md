@@ -29,4 +29,4 @@ Eftermiddag - 14:53 (skal ringe til banken kl 15)
 ## Dag 5
 
 Morgen - 8:02  
-Eftermiddag - (tidspunkt)
+Eftermiddag - 15:08 (er i Aalborg så må nødt til at aflevere lidt før har gjort mit bedstse og føler jeg er nået i mål med det meste)

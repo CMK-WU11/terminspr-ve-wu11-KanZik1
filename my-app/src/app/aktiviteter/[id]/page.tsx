@@ -46,13 +46,12 @@ export default function AktivitetDetaljer({ params }: Props) {
                         console.log({ rosterData: userData, id: resolvedParams.id })
                         setIsEnrolled(userData.activities.some((act: any) => act.id == resolvedParams.id));
                     } else if (role == "instructor") {
-
-                        const result = await fetch(`http://localhost:4000/api/v1/users/${userId}/roster/${userId}`, {
+                        const result = await fetch(`http://localhost:4000/api/v1/users/${userId}/roster/${resolvedParams.id}`, {
                             headers: { Authorization: `Bearer ${token}` }
                         });
                         const rosterData = await result.json();
+                        console.log('Roster data:', rosterData);
                         setRoster(rosterData);
-                        console.log({ rosterData: rosterData });
                     }
                 } else {
                     router.push('/login');
@@ -144,9 +143,9 @@ export default function AktivitetDetaljer({ params }: Props) {
             <h2 className="text-2xl font-bold mb-4">{aktivitet.name}</h2>
 
             <ul className="space-y-2">
-                {aktivitet && aktivitet.users.map((user: any) => (
-                    <li key={user.id} className="bg-[#E1A1E9] bg-opacity-20 p-3 rounded">
-                        {user.firstname} {user.lastname} - {user.age} år
+                {roster && roster.map((user: any) => (
+                    <li key={user.firstname} className="bg-[#E1A1E9] bg-opacity-20 p-3 rounded">
+                        {user.firstname} {user.lastname} - Tidspunkt: {user.time}
                     </li>
                 ))}
             </ul>

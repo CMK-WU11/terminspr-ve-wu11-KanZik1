@@ -1,0 +1,50 @@
+Jeg er gået med valfri opgave 3, som er den med cookies. 
+
+
+1. Landrup Dans er en mobile-first web app, som er udviklet med Next.js og Tailwind CSS.
+
+2. Teknologier anvendt i dette projekt:
+
+Frontend: Next.js
+Styling: Tailwind 
+State Management: React Hooks (useState, useEffect)
+Routing: Next.js Router
+Authentication: Cookies med JWT
+
+3. hovedfunktionaliteter:
+- Brugerauthentication altså login
+- Søgefunktion i vores aktiviteter
+- Tilmeldning og afemelding af aktiviteter
+- Kalender af dine tilmeldte aktiviteter
+- Forskellige roller/grupper her snakker vi om default og instructor
+- Default kan se alle aktiviteter og tilmelde sig dem
+- Instructor kan se alle tilmeldte deltagere og se deres information
+
+4. Lidt om Sikkerhed
+- JWT
+- Beskyttede routes
+- Validering af brugerens alder, iforhold til aktivitetens aldersgrænse
+- Sikker cookie-håndtering
+
+5. Brugergrænsefladedesign
+- Mobile first design
+- Responsivt design
+- Intuitiv navigationssystem via vores footer
+- Søgefuntionen er let tilgængelig
+
+6. Mine udfordringer og løsninger
+Brugerroller: Jeg Implementeret forskellige views (kalender, aktiviteter, login) baseret på brugerrollerne (instructor og default)
+
+7. Test af web-appen
+- Manuelt testet alle hovedfunktionaliteter
+- Corss-browser testing
+- Responsivt test
+
+8. Installation og kørsel af web-appen
+
+1: Sørg for du har apien i dit projekt : https://github.com/rts-cmk/landrup-dans-api
+2: npm install
+3: Lav derefter 2 terminaler:
+API: npm start
+my-app (projektet): npm run dev 
+

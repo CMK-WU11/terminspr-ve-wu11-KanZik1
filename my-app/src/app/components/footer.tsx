@@ -17,7 +17,7 @@ export default function Footer() {
 
         const userToken = document.cookie
             .split('; ')
-            .find(row => row.startsWith('userToken='));
+            .find(row => row.startsWith('landrupToken='));
 
         if (userToken) {
             router.push('/kalender');
