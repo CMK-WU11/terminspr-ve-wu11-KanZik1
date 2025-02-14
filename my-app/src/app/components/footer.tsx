@@ -20,10 +20,8 @@ export default function Footer() {
             .find(row => row.startsWith('userToken='));
 
         if (userToken) {
-
             router.push('/kalender');
         } else {
-
             router.push('/login');
         }
     };
@@ -45,9 +43,11 @@ export default function Footer() {
                         <span className="text-xs mt-1">Aktiviteter</span>
                     </Link>
 
+                    {/* Opdateret søgeknap */}
                     <button
-                        data-search-icon
-                        className="flex flex-col items-center text-gray-500">
+                        className="flex flex-col items-center text-gray-500"
+                        onClick={() => document.dispatchEvent(new Event('toggleSearch'))}
+                    >
                         <Image
                             src="/search.png"
                             alt="Søg"
